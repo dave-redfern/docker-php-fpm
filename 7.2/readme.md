@@ -24,7 +24,7 @@ If you need to install from custom git repos, be sure to setup git.
  
 ## Intended Usage
 
-Import from this image and add additional setup steps to build your app. For example:
+Import from this image and add additional setup steps to build your app. For example for PHP 7.3:
 
 ```dockerfile
 FROM somnambulist/php-fpm:7.3-latest
@@ -37,6 +37,8 @@ RUN apk --update add ca-certificates \
     && rm -rf /var/cache/apk/* /tmp/*
 
 ```
+
+Note: the minor version does not track the PHP version; it is the revision of the Dockerfile.
 
 A `.dockerignore` should be setup to prevent copying in git and vendor files:
 
