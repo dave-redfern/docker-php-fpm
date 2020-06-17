@@ -4,7 +4,7 @@ Extends the PHP base image to provide FPM.
 
 ### Tags
 
-This project is tagged for PHP 7.2 (7.2.X) and PHP 7.3.X. PHP 7.3 uses Alpine 3.10.
+This project is tagged for PHP 7.2 (7.2.X) and PHP 7.3.X. PHP 7.3 uses Alpine 3.12.
 
 Note:
 
@@ -14,6 +14,7 @@ In addition the follow are available:
 
  * bash
  * curl
+ * nano
  * tini
  * unzip
  * wget
