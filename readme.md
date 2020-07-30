@@ -4,13 +4,17 @@ Extends the PHP base image to provide FPM.
 
 ### Tags
 
-This project is tagged for PHP 7.2 (7.2.X) and PHP 7.3.X. PHP 7.3 uses Alpine 3.12.
+This project is tagged for:
+
+ * PHP 7.2 (7.2.X), Alpine 3.9
+ * PHP 7.3 (7.3.X), Alpine 3.12
+ * PHP 7.4 (7.4.X), Alpine Edge
 
 Note:
 
  * only sqlite has been loaded, add MySQL / Postgres if you need them
  
-In addition the follow are available:
+In addition, the follow are available:
 
  * bash
  * curl
@@ -28,7 +32,7 @@ If you need to install from custom git repos, be sure to setup git.
 Import from this image and add additional setup steps to build your app. For example:
  
  ```dockerfile
- FROM somnambulist/php-fpm:7.3-latest
+ FROM somnambulist/php-fpm:7.4-latest
  
  RUN apk --update add ca-certificates \
      && apk update \
