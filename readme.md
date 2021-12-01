@@ -6,10 +6,9 @@ Extends the PHP base image to provide FPM.
 
 This project is tagged for:
 
- * PHP 7.2 (7.2.X), Alpine 3.9
  * PHP 7.3 (7.3.X), Alpine 3.12
  * PHP 7.4 (7.4.X), Alpine 3.13
- * PHP 8.0 (8.0.X), Alpine 3.13
+ * PHP 8.0 (8.0.X), Alpine 3.15
 
 Note:
 
@@ -49,6 +48,7 @@ WORKDIR /app
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod 755 /docker-entrypoint.sh
+RUN composer selfupdate
 
 # copy over the fpm config
 COPY config/docker/dev/php-fpm/php-fpm.conf /etc/php-fpm.conf
