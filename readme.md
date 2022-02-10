@@ -6,9 +6,9 @@ Extends the PHP base image to provide FPM.
 
 This project is tagged for:
 
- * PHP 7.3 (7.3.X), Alpine 3.12
- * PHP 7.4 (7.4.X), Alpine 3.13
+ * PHP 7.4 (7.4.X), Alpine 3.15
  * PHP 8.0 (8.0.X), Alpine 3.15
+ * PHP 8.1 (8.1.X), Alpine Edge + Testing
 
 Note:
 
@@ -32,13 +32,13 @@ If you need to install from custom git repos, be sure to setup git.
 Import from this image and add additional setup steps to build your app. For example:
  
  ```dockerfile
-FROM somnambulist/php-fpm:7.4-latest
+FROM somnambulist/php-fpm:8.0-latest
 
 RUN apk --update add ca-certificates \
     && apk update \
     && apk upgrade \
     && apk --no-cache add -U \
-    php7-pdo-pgsql \
+    php8-pdo-pgsql \
     && rm -rf /var/cache/apk/* /tmp/*
 
 # optionally: update composer or add to the above APK line
@@ -63,7 +63,8 @@ COPY composer.* ./
 COPY .env* ./
 
 RUN chmod 755 /docker-entrypoint.sh
-RUN composer install --no-suggest --no-scripts --quiet --optimize-autoloader
+# remove --optimize-autoloader for dev containers
+RUN composer install --no-scripts --quiet --optimize-autoloader
 
 # copy all the files to the /app folder, use with a .dockerignore
 COPY . .
@@ -86,7 +87,7 @@ cd /app
 [[ -d "/app/var/logs" ]] || mkdir -m 0777 "/app/var/logs"
 [[ -d "/app/var/tmp" ]] || mkdir -m 0777 "/app/var/tmp"
 
-/usr/sbin/php-fpm --nodaemonize
+/usr/sbin/php-fpm8 --nodaemonize
 ```
 
 A `.dockerignore` should be setup to prevent copying in git and vendor files:
