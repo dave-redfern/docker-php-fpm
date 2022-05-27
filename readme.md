@@ -8,7 +8,7 @@ This project is tagged for:
 
  * PHP 7.4 (7.4.X), Alpine 3.15
  * PHP 8.0 (8.0.X), Alpine 3.15
- * PHP 8.1 (8.1.X), Alpine Edge + Community
+ * PHP 8.1 (8.1.X), Alpine 3.16
 
 Note:
 
