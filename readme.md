@@ -6,7 +6,7 @@ Extends the PHP base image to provide FPM.
 
 This project is tagged for:
 
- * PHP 8.0 (8.0.X), Alpine 3.17
+ * PHP 8.0 (8.0.X), Alpine 3.16
  * PHP 8.1 (8.1.X), Alpine 3.17
  * PHP 8.2 (8.2.X), Alpine Edge
 
