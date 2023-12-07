@@ -6,9 +6,9 @@ Extends the PHP base image to provide FPM.
 
 This project is tagged for:
 
- * PHP 8.0 (8.0.X), Alpine 3.16
- * PHP 8.1 (8.1.X), Alpine 3.17
- * PHP 8.2 (8.2.X), Alpine Edge
+ * PHP 8.1 (8.1.X), Alpine 3.19
+ * PHP 8.2 (8.2.X), Alpine 3.19
+ * PHP 8.3 (8.3.X), Alpine 3.19
 
 Note:
 
@@ -32,13 +32,13 @@ If you need to install from custom git repos, be sure to setup git.
 Import from this image and add additional setup steps to build your app. For example:
  
  ```dockerfile
-FROM somnambulist/php-fpm:8.0-latest
+FROM somnambulist/php-fpm:8.3-latest
 
 RUN apk --update add ca-certificates \
     && apk update \
     && apk upgrade \
     && apk --no-cache add -U \
-    php8-pdo-pgsql \
+    php83-pdo-pgsql \
     && rm -rf /var/cache/apk/* /tmp/*
 
 # optionally: update composer or add to the above APK line
